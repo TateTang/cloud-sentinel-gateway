@@ -1,5 +1,7 @@
 package com.tate.springcloud.service;
 
+import com.tata.springcloud.entities.CommonResult;
+import com.tata.springcloud.entities.Payment;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,7 +12,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentFallbackService implements ProviderService {
     @Override
-    public String getProvider(Integer id) {
-        return "错误了 ku";
+    public CommonResult<Payment> getProvider(Long id) {
+        return new CommonResult<>(44444, "服务降级返回，---PaymentFallbackService",
+                new Payment(id, "errorSerial"));
     }
 }

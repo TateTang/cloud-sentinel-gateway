@@ -1,5 +1,7 @@
 package com.tate.springcloud.service;
 
+import com.tata.springcloud.entities.CommonResult;
+import com.tata.springcloud.entities.Payment;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,6 @@ public interface ProviderService {
     /*
         openFeign调用其他服务，保证调用一致性
      */
-    @GetMapping("/provider/nacos/{id}")
-    String getProvider(@PathVariable("id") Integer id);
+    @GetMapping("provider/{id}")
+    CommonResult<Payment> getProvider(@PathVariable("id") Long id);
 }

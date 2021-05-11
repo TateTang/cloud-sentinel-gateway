@@ -1,5 +1,7 @@
 package com.tate.springcloud.controller;
 
+import com.tata.springcloud.entities.CommonResult;
+import com.tata.springcloud.entities.Payment;
 import com.tate.springcloud.service.ProviderService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +26,8 @@ public class ConsumerController {
         return "hello";
     }
 
-    @GetMapping("nacos/{id}")
-    public String getProvider(@PathVariable("id") Integer id) {
+    @GetMapping("provider/{id}")
+    public CommonResult<Payment> getProvider(@PathVariable("id") Long id) {
         return providerService.getProvider(id);
     }
 }
