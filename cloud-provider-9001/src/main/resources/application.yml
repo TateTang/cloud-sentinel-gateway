@@ -5,7 +5,8 @@ spring:
     name: cloud-provider
   cloud:
     nacos:
-      server-addr: localhost:8848 #Nacos配置地址
+      discovery:
+        server-addr:  127.0.0.1:8848 #Nacos配置地址
 
 #暴露监控端口
 management:
