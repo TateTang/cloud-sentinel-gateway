@@ -27,6 +27,12 @@
         <mysql.version>8.0.22</mysql.version>
         <druid.verison>1.1.22</druid.verison>
         <mybatis.spring.boot.verison>2.1.4</mybatis.spring.boot.verison>
+                <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+                <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+                <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+<!--        <spring-boot.version>2.4.5</spring-boot.version>-->
+<!--        <spring-cloud.version>2020.0.2</spring-cloud.version>-->
+<!--        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>-->
     </properties>
 
     <!--来提供一种管理依赖版本好的方式。通常会在一个组织或者项目的最顶层父pom中看到DependecyManagement元素-->
@@ -37,23 +43,21 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.2.2.RELEASE</version>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--spring cloud Hoxton.SR1-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR1</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--spring cloud alibaba 2.1.0.RELEASE-->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.2.0.RELEASE</version>
+                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

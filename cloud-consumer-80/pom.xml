@@ -54,6 +54,17 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
+        <!--持久化需要-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+        </dependency>
+        <!--由于SpringCloudFeign在Hoxton.M2 RELEASED版本之后不再使用Ribbon而是使用
+        spring-cloud-loadbalancer，所以不引入spring-cloud-loadbalancer会报错-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-loadbalancer</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>

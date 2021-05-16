@@ -7,7 +7,19 @@ spring:
     nacos:
       discovery:
         server-addr:  127.0.0.1:8848 #Nacos配置地址
-
+    sentinel:
+      eager: true # 取消Sentinel控制台懒加载
+      transport:
+        dashboard: 127.0.0.1:8080 # 配置sentinel dashboard地址 监控80
+        port: 8719 # 默认8719端口，假如被占用，会自动从8719开始依次扫描，直到找到未被占用的端口
+      datasource:
+        # 名称随意
+        flow:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            dataId: ${spring.application.name}-flow-rules  # 都是在 sentinel源码持久化改造中的规则名称
+            groupId: SENTINEL_GROUP
+            rule-type: flow
 #暴露监控端口
 management:
   endpoints:
